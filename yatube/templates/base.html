@@ -1,0 +1,40 @@
+{% load static %}
+<!DOCTYPE html> <!-- Используется html 5 версии -->
+<html lang="ru"> <!-- Язык сайта - русский -->
+  <head>    
+    {% include 'includes/header.html' %}
+    <title> 
+    {% block title %} 
+    {% endblock %} 
+    </title>
+  </head>
+  <body>
+    <header>
+      <!-- Использованы классы бустрапа для создания типовой навигации с логотипом -->
+      <!-- В дальнейшем тут будет создано полноценное меню -->
+      <nav class="navbar navbar-light" style="background-color: lightskyblue">
+        <div class="container">
+           <!-- ссылка должна вести на главную страницу -->
+        </div>
+      </nav>      
+    </header>
+    <main>
+      <!-- класс py-5 создает отступы сверху и снизу блока -->
+      <div class="container py-5">
+        {% block heading %}
+        {% endblock %}
+      {% block article %}
+      {% endblock %}
+      {% block content %}
+      {% endblock %}
+      </div>
+    </main>
+    <!-- Использованы классы бустрапа: -->
+    <!-- border-top: создаёт тонкую линию сверху блока -->
+    <!-- text-center: выравнивает текстовые блоки внутри блока по центру -->
+    <!-- py-3: контент внутри размещается с отсупом сверху и снизу -->         
+  <footer class="border-top text-center py-3">
+    {% include 'includes/footer.html' %} 
+  </footer>
+  </body>
+</html>
